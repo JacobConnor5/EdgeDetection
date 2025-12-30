@@ -24,14 +24,14 @@ public class ImageMatrix {
 
     }
 
-    public void backToImage(){
+    public void backToImage(String size){
         BufferedImage image = new BufferedImage(pixels.length, pixels[0].length, BufferedImage.TYPE_INT_RGB);
         for (int i =0; i<w;i++){
             for(int j=0;j<h;j++){
                 image.setRGB(i,j,pixels[i][j]);
             }
         }
-        File f = new File("./testOutput.png");
+        File f = new File("./images/SkylineOutput-"+size+".png");
         try {
             ImageIO.write(image, "png", f);
         } catch (IOException e) {
