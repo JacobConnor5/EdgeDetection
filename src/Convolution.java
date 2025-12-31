@@ -55,8 +55,8 @@ public class Convolution {
         vMatrix = new int[size][size];
         for (int i = 0;i<(size);i++){
             for (int j=0;j<(size/2);j++){
-                vMatrix[i][j] = 1;
-                vMatrix[i][size-j-1] = -1;
+                vMatrix[j][i] = 1;
+                vMatrix[size-j-1][i] = -1;
             }
 
         }

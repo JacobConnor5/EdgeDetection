@@ -12,8 +12,8 @@ public class Main {
 
         Convolution conv = new Convolution();
 
-        conv.setvMatrix(20);
-        ImageMatrix image = new ImageMatrix(new File("./skyscraper.jpg"));
+        conv.setvMatrix(3);
+        ImageMatrix image = new ImageMatrix(new File("./Skyline.jpg"));
         conv.setIMatrix(image.pixels);
         conv.Vertical();
         image.setPixels(conv.newMatrix);
