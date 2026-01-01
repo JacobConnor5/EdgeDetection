@@ -17,7 +17,6 @@ public class Convolution {
         //loop through starting at 2
         //ending at Imatrix-size of c matrix
         int conv;
-        System.out.println(iMatrix[0].length-(cHeight/2)-1);
         for (int i = (cHeight/2); i<(iMatrix.length-(cHeight/2)-1);i++){
             for (int j = (cHeight/2); j<(iMatrix[i].length-(cHeight/2)-1);j++){
                 conv = 0;
@@ -85,7 +84,7 @@ public class Convolution {
         //integer division by 2
         //make 1s that many times and -1 that many times
         cHeight = size;
-        vMatrix = new int[size][size];
+        hMatrix = new int[size][size];
         for (int i = 0;i<(size);i++){
             for (int j=0;j<(size/2);j++){
                 hMatrix[i][j] = ((i%2)+1);
@@ -95,7 +94,26 @@ public class Convolution {
 
         }
 
+
         System.out.println(Arrays.deepToString(hMatrix));
+    }
+
+    public void Diagonal(int size){
+        sethMatrix(size);
+        setvMatrix(size);
+
+        Vertical();
+        int[][] tempMa = newMatrix;
+        Horizontal();
+        for (int i = 0;i<newMatrix.length;i++){
+            for (int j = 0;j<newMatrix[0].length;j++){
+
+                newMatrix[i][j] = (int) Math.sqrt(Math.pow(newMatrix[i][j],2)+Math.pow(tempMa[i][j],2));
+
+            }
+        }
+
+
     }
 }
 

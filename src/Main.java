@@ -12,10 +12,9 @@ public class Main {
 
         Convolution conv = new Convolution();
 
-        conv.sethMatrix(3);
-        ImageMatrix image = new ImageMatrix("face.jpg");
+        ImageMatrix image = new ImageMatrix("skyscraper.jpg");
         conv.setIMatrix(image.pixels);
-        conv.Horizontal();
+        conv.Diagonal(3);
         image.setPixels(conv.newMatrix);
 
         image.backToImage(Integer.toString(conv.cHeight));
