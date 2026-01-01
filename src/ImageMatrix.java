@@ -9,11 +9,13 @@ public class ImageMatrix {
     int w;
     int h;
     int[][] pixels;
-    public ImageMatrix(File f) throws IOException {
-        BufferedImage img = ImageIO.read(f);
+    String path;
+    public ImageMatrix(String f) throws IOException {
+        BufferedImage img = ImageIO.read(new File("./"+f));
         Raster r = img.getData();
         w = r.getWidth();
         h = r.getHeight();
+        path = f;
         pixels = new int[w][h];
 
         for(int i =0;i<w;i++){
@@ -31,7 +33,7 @@ public class ImageMatrix {
                 image.setRGB(i,j,pixels[i][j]);
             }
         }
-        File f = new File("./images/SkylineOutput-"+size+".png");
+        File f = new File("./images/output/"+size+"-"+path);
         try {
             ImageIO.write(image, "png", f);
         } catch (IOException e) {

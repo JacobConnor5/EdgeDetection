@@ -12,13 +12,15 @@ public class Main {
 
         Convolution conv = new Convolution();
 
-        conv.setvMatrix(3);
-        ImageMatrix image = new ImageMatrix(new File("./Skyline.jpg"));
+        conv.sethMatrix(3);
+        ImageMatrix image = new ImageMatrix("face.jpg");
         conv.setIMatrix(image.pixels);
-        conv.Vertical();
+        conv.Horizontal();
         image.setPixels(conv.newMatrix);
 
         image.backToImage(Integer.toString(conv.cHeight));
+
+
 
         //System.out.println(Arrays.deepToString(conv.newMatrix));
 
