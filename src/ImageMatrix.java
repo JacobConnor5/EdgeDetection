@@ -26,14 +26,14 @@ public class ImageMatrix {
 
     }
 
-    public void backToImage(String size){
+    public void backToImage(String size,String misc){
         BufferedImage image = new BufferedImage(pixels.length, pixels[0].length, BufferedImage.TYPE_INT_RGB);
         for (int i =0; i<w;i++){
             for(int j=0;j<h;j++){
                 image.setRGB(i,j,pixels[i][j]);
             }
         }
-        File f = new File("./images/output/"+size+"-"+path);
+        File f = new File("./images/output/"+size+"-"+misc+"-"+path);
         try {
             ImageIO.write(image, "png", f);
         } catch (IOException e) {

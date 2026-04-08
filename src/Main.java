@@ -12,13 +12,17 @@ public class Main {
 
         Convolution conv = new Convolution();
 
-        ImageMatrix image = new ImageMatrix("skyscraper.jpg");
+        ImageMatrix image = new ImageMatrix("butterfly.jpg");
         conv.setIMatrix(image.pixels);
         conv.Diagonal(3);
         image.setPixels(conv.newMatrix);
-
-        image.backToImage(Integer.toString(conv.cHeight));
-
+        image.backToImage(Integer.toString(conv.cHeight),"D");
+        conv.Vertical();
+        image.setPixels(conv.newMatrix);
+        image.backToImage(Integer.toString(conv.cHeight),"V");
+        conv.Horizontal();
+        image.setPixels(conv.newMatrix);
+        image.backToImage(Integer.toString(conv.cHeight),"H");
 
 
         //System.out.println(Arrays.deepToString(conv.newMatrix));
