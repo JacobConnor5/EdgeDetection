@@ -6,10 +6,12 @@ This then generates a new image with the only specified edges shown
 For example All of these images were created using a 3 x 3 convolution matrix:
 
 <h3>Original</h3>
-![original](butterfly.jpg)
+
+![original](https://github.com/JacobConnor5/EdgeDetection/blob/9fbcdcbfd460ff83497db39c63eefacc5fd6a2ca/butterfly.jpg)
 
 <h3>Horizontal Edges</h3>
-![horizontal](images/output/3-H-butterfly.jpg)
+
+![Horizontal](images/output/3-H-butterfly.jpg)
 
 <h3>Vertical edges</h3>
 
